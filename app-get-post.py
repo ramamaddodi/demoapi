@@ -19,7 +19,8 @@ def returnone(name):
 
 @app.route("/lang", methods=['POST'])
 def addone():
-    languages = {'name' : request.json['name']}
+    language = {'name' : request.json['name']}
+
     languages.append(language)
 
     return jsonify({"languages": languages})
