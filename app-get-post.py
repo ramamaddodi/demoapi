@@ -32,5 +32,12 @@ def editone(name):
 
     return jsonify({"languages": langs[0]})
 
+@app.route("/lang/<string:name>", methods=['DELETE'])
+def removeone(name):
+    lang = [language for language in languages if language['name'] == name]
+    languages.remove(lang[0])
+
+    return jsonify({"languages": langauges})
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080)
